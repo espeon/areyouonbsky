@@ -18,7 +18,7 @@ function HomePage() {
     e.preventDefault();
     if (handle.trim()) {
       // Remove @ if user included it
-      const cleanHandle = handle.trim().replace(/^@/, "");
+      const cleanHandle = handle.trim().replace(/^@/, "").toLowerCase();
       // add .bsky.social if no domain is provided
       if (!cleanHandle.includes(".")) {
         navigate({ to: `/${cleanHandle}.bsky.social` });
