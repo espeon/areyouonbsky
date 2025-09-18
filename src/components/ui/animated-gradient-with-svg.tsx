@@ -50,10 +50,6 @@ interface AnimatedGradientProps {
   blur?: "light" | "medium" | "heavy";
 }
 
-const randomInt = (min: number, max: number) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
 const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
   colors,
   speed = 5,
@@ -73,7 +69,7 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
         color,
         top: 0.12 * 50,
         left: 0.5 * 50,
-        width: circleSize * 1.3,
+        width: circleSize * 0.8,
         height: circleSize * 1.4812,
         tx1: 0.345 - 0.5,
         ty1: 0.122 - 0.5,
@@ -106,14 +102,14 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
                 top: `${config.top}%`,
                 left: `${config.left}%`,
                 "--background-gradient-speed": `${1 / speed}s`,
-                "--tx-1": config.tx1,
+                "--tx-1": config.tx1 + index * 0.1,
                 "--ty-1": config.ty1,
                 "--tx-2": config.tx2,
-                "--ty-2": config.ty2,
-                "--tx-3": config.tx3,
+                "--ty-2": config.ty2 + index * 0.1,
+                "--tx-3": config.tx3 + index * 0.1,
                 "--ty-3": config.ty3,
-                "--tx-4": config.tx4,
-                "--ty-4": config.ty4,
+                "--tx-4": config.tx4 + index * 0.1,
+                "--ty-4": config.ty4 + index * 0.1,
               } as React.CSSProperties
             }
             width={config.width}
