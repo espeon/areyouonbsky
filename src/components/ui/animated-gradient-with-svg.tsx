@@ -67,8 +67,8 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
     () =>
       colors.map((color, index) => ({
         color,
-        top: 0.12 * 50,
-        left: 0.5 * 50,
+        top: 0.12 * 50 * index,
+        left: 0.5 * 50 * index,
         width: circleSize * 0.8,
         height: circleSize * 1.4812,
         tx1: 0.345 - 0.5 + index,
