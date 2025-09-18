@@ -93,7 +93,7 @@ function SuccessResult({ result, handle }: BlueskyResultProps) {
   const isBridgy = pds?.includes("brid.gy");
 
   return (
-    <Card className="animate-in fade-in blur-in-sm duration-1000 rounded-xl overflow-clip p-0">
+    <Card className="animate-in fade-in blur-in-sm duration-250 rounded-xl overflow-clip p-0">
       <div className="relative py-8">
         <CardContent className="p-8 text-center z-10 rounded-xl">
           <AnimatedGradient
