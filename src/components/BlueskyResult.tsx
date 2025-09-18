@@ -116,13 +116,21 @@ function SuccessResult({ result, handle }: BlueskyResultProps) {
               }
             />
             <p className="text-2xl mb-4">
-              <span className="font-semibold">@{handle}</span> is{" "}
+              <span className="font-semibold text-pretty break-words">
+                @{handle}
+              </span>{" "}
+              is{" "}
               {isMushroom
-                ? "on a first-party PDS"
+                ? "on a Bluesky PDS"
                 : isBridgy
                   ? "on an elephant!"
                   : "on an independent PDS! 🎉"}
-              {isBridgy && "wait, huh? that doesn't make sense."}
+              {isBridgy && (
+                <>
+                  <br />
+                  wait, huh? that doesn't make sense... 🤔
+                </>
+              )}
             </p>
             <p className="font-mono bg-gray-200 dark:bg-gray-700/60 rounded-md w-fit mx-auto px-2 pt-1 text-sm mb-6">
               {pds}
