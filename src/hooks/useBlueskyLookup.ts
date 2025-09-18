@@ -1,3 +1,4 @@
+import { resolveFromIdentity } from "@/lib/pds";
 import { useState, useCallback } from "react";
 
 export interface LookupResult {
@@ -21,8 +22,9 @@ export function useBlueskyLookup() {
       );
 
       if (!resolveResponse.ok) {
-        setResult({ found: false, error: "Handle not found" });
-        return;
+        throw new Error(
+          `Network response was not ok: ${resolveResponse.statusText}`,
+        );
       }
 
       const resolveData = await resolveResponse.json();
@@ -32,6 +34,20 @@ export function useBlueskyLookup() {
         pds: resolveData.pds,
       });
     } catch (error) {
+      try {
+        let res = await resolveFromIdentity(handle);
+        if (res) {
+          setResult({
+            found: true,
+            pds: res.pds.toString(),
+          });
+          return;
+        }
+      } catch (e) {
+        console.error("Error in fallback resolveFromIdentity:", e);
+      }
+      console.error("Network or other error during lookup:", error);
+
       setResult({
         found: false,
         error: "Network error or invalid response",
