@@ -95,7 +95,6 @@ function SuccessResult({ result, handle }: BlueskyResultProps) {
   return (
     <Card className="animate-in fade-in blur-in-sm duration-1000 rounded-xl overflow-clip p-0">
       <div className="relative py-8">
-        {/* Content layer - stays crisp */}
         <CardContent className="p-8 text-center z-10 rounded-xl">
           <AnimatedGradient
             colors={
@@ -106,7 +105,6 @@ function SuccessResult({ result, handle }: BlueskyResultProps) {
             speed={0.01}
             blur="heavy"
           />
-          {/* Success header */}
           <div className="text-center">
             <StatusIcon
               type="success"

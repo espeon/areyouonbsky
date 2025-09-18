@@ -39,15 +39,17 @@ function HomePage() {
         <div className="mb-8 mt-12">
           <div className="text-5xl md:text-6xl text-foreground mb-4">
             Are you on a{" "}
-            <span className="relative overflow-clip text-blue-400 font-bold bg-clip-text mb-6 px-2 -mx-2 rounded-xl">
-              <AnimatedGradient
-                colors={["#0077b6", "#5e548e", "#7b2cbf"]}
-                speed={0.05}
-                blur="medium"
-              />
+            <span className="relative text-blue-400 font-bold bg-clip-text mb-6 px-2 -mx-2 rounded-xl">
               <span className="animate-in blur-in-sm duration-500">
                 Bluesky PDS?
               </span>
+              <div className="absolute inset-0 bg-accent/20 -rotate-1 hover:rotate-2 overflow-clip rounded-xl">
+                <AnimatedGradient
+                  colors={["#0077b6", "#5e548e", "#7b2cbf"]}
+                  speed={0.05}
+                  blur="medium"
+                />
+              </div>
             </span>
           </div>
           <p className="md:text-lg text-muted-foreground mb-8">
