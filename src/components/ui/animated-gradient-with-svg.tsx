@@ -146,7 +146,7 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = memo(
                 cy="50"
                 r="50"
                 fill={config.color}
-                className="opacity-30 dark:opacity-[0.15]"
+                className="opacity-20 dark:opacity-15"
               />
             </svg>
           ))}
