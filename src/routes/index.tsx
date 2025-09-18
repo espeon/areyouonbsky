@@ -73,7 +73,7 @@ function HomePage() {
               >
                 Bluesky PDS?
               </span>
-              <div className="absolute inset-0 bg-accent/20 -rotate-1 hover:rotate-2 overflow-clip rounded-xl">
+              <div className="absolute inset-0 bg-accent/20 -rotate-1 hover:rotate-2 overflow-clip rounded-xl border">
                 <AnimatedGradient
                   colors={["#0077b6", "#5e548e", "#7b2cbf"]}
                   speed={0.05}
@@ -96,16 +96,14 @@ function HomePage() {
               : "animate-in fade-in duration-750"
           }`}
         >
-          <div className="flex flex-row max-w-lg mx-auto">
-            <div className="flex-1">
-              <Input
-                value={handle}
-                onChange={(e) => setHandle(e.target.value)}
-                placeholder="username.bsky.social"
-                autoFocus
-                className="text-lg py-3 rounded-r-none h-10"
-              />
-            </div>
+          <div className="flex flex-row max-w-lg mx-auto shadow-md rounded-lg">
+            <Input
+              value={handle}
+              onChange={(e) => setHandle(e.target.value)}
+              placeholder="username.bsky.social"
+              autoFocus
+              className="text-lg py-3 rounded-r-none h-10 focus-visible:ring-ring/0 focus-visible:ring-[0px]"
+            />
             <Button type="submit" size="lg" className="rounded-l-none">
               Check
             </Button>

@@ -81,7 +81,7 @@ export function StatusIcon({
     return (
       <div
         className={cn(
-          "flex items-center justify-center rounded-full",
+          "flex items-center justify-center rounded-full border border-border",
           bgColor,
           sizeClasses[size],
           className,
