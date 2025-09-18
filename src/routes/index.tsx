@@ -5,6 +5,9 @@ import { Input } from "../components/ui/input";
 import { Layout, DarkModeToggle } from "../components/ui/custom";
 import { AnimatedGradient } from "@/components/ui/animated-gradient-with-svg";
 
+// Move colors outside component to prevent recreation on each render
+const GRADIENT_COLORS = ["#0077b6", "#5e548e", "#7b2cbf"];
+
 export const Route = createFileRoute("/")({
   component: HomePage,
 });
@@ -75,7 +78,7 @@ function HomePage() {
               </span>
               <div className="absolute inset-0 bg-accent/20 -rotate-1 hover:rotate-2 overflow-clip rounded-xl border">
                 <AnimatedGradient
-                  colors={["#0077b6", "#5e548e", "#7b2cbf"]}
+                  colors={GRADIENT_COLORS}
                   speed={0.05}
                   blur="medium"
                 />
